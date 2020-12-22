@@ -8,12 +8,31 @@
 // dichiarazione array
 numeriComputer = [];
 numeriUtente = [];
+var   difficolta=parseInt(prompt("Inserisci difficolata(0=1-100||1=1-80||2=1-50"))
+//livelli difficolta
+switch (difficolta) {
+  case 0:
+    min=1;
+    max=100;
+   break;
+  
+  case 1:
+    min=1;
+    max=80;
+    break;
+  case 2:
+      min=1;
+      max=50;
+      break;
 
+  default:
+  alert("Error");
+}
 
 //numeri computer senza ripetizioni
 while (numeriComputer.length < 16){
   
-   var numero = generaRandom(1,100);
+   var numero = generaRandom();
  
    if (numeriComputer.includes(numero) == false){
   
@@ -23,9 +42,9 @@ while (numeriComputer.length < 16){
 
 console.log(numeriComputer);
 var sentinella = true;
-
+var maxinput= max-16;
 // numeri utenti-controllo range-ripetizioni-presenza in array computer
-while (numeriUtente.length < 84 && sentinella){ //sentinella true
+while (numeriUtente.length <maxinput  && sentinella){ //sentinella true
     var number=parseInt(prompt("Inserire un numero da 1 a 100") );
     if(number>=1 && number <=100){
       if(numeriComputer.includes(number)==true){
@@ -65,6 +84,6 @@ console.log(numeriUtente);
 console.log(risultato);
 
 // min e max compresi
-function generaRandom(min, max){
+function generaRandom(){
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
