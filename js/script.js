@@ -9,6 +9,7 @@
 numeriComputer = [];
 numeriUtente = [];
 
+
 //numeri computer senza ripetizioni
 while (numeriComputer.length < 16){
   
@@ -29,7 +30,7 @@ while (numeriUtente.length < 84 && sentinella){ //sentinella true
     if(number>=1 && number <=100){
       if(numeriComputer.includes(number)==true){
         sentinella=false;
-        alert("Hai totalizzato: "+numeriUtente.length+" punti");
+        
       }
       else{
         if(numeriUtente.includes(number) == false){
@@ -38,14 +39,31 @@ while (numeriUtente.length < 84 && sentinella){ //sentinella true
         else{
           alert("Non inserire lo stesso valore")
         }
+
       }
     }
   else{
     alert("Si prega di inserire valori compresi tra 1 a 100");
   }
+  
 }
+var risultato=result(numeriUtente);
+
+
+
+//FUNZIONI
+function result(numeriUtente){
+  if(numeriUtente.length==84){
+    return "Hai vinto";
+  }
+  else{
+    return"Hai perso, hai totalizzato: "+numeriUtente.length;
+  }
+}
+
 console.log(numeriUtente);
-// FUNZIONE
+console.log(risultato);
+
 // min e max compresi
 function generaRandom(min, max){
   return Math.floor(Math.random() * (max - min + 1) ) + min;
