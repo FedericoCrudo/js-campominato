@@ -72,7 +72,7 @@ var risultato=result(numeriUtente);
 
 //FUNZIONI
 function result(numeriUtente){
-  if(numeriUtente.length==84){
+  if(numeriUtente.length==maxinput){
     return "Hai vinto";
   }
   else{
